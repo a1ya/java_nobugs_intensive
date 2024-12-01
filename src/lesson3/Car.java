@@ -1,3 +1,5 @@
+package lesson3;
+
 public class Car {
 
     private String brand;
