@@ -1,12 +1,18 @@
-
-import Homework3.Homework3;
+import lesson5.notification.EmailNotificationChannel;
+import lesson5.notification.NotificationService;
+import lesson5.notification.SmsNotificationChannel;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] numbers = {1, 2, 3, -5, 1, -1, 2};
-        System.out.println(Homework3.countUniqueElementsInArray(numbers));
+/*        DiscountStrategy discountStrategy = new DiscountStrategyHandler().getStrategy(CustomerType.VIP);
+        System.out.println(discountStrategy.calculate(500));*/
+
+        NotificationService notificationService = new NotificationService();
+        notificationService.subscribe(new SmsNotificationChannel("99988887777"));
+        notificationService.subscribe(new EmailNotificationChannel("asd@fgh.com"));
+        notificationService.notifyAllChannels("Test message");
 
     }
 
